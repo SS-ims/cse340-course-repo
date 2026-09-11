@@ -23,19 +23,33 @@ const app = express();
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+
+// Tell Express where to find your templates
+app.set('views', path.join(__dirname, 'src/views'));
+
 /**
   * Routes
   */
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/views/home.html'));
+  // Render the home template with the title used by the shared header and page heading
+  res.render('home', { title: 'CSE 340 Service Network' });
 });
 
 app.get('/organizations', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/views/organizations.html'));
+  // Render the organizations template with its shared page title
+  res.render('organizations', { title: 'Organizations' });
 });
 
 app.get('/projects', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/views/projects.html'));
+  // Render the projects template with its shared page title
+  res.render('projects', { title: 'Projects' });
+});
+
+app.get('/categories', (req, res) => {
+  // Render the categories template with its shared page title
+  res.render('categories', { title: 'Categories' });
 });
 
 app.listen(PORT, () => {
