@@ -67,7 +67,8 @@ nav a {
     padding: 0.6rem 0.85rem;
     border-radius: 6px;
     color: #e9f3ef;
-    font-size: 0.9rem;
+    /* Increase navigation text size so links are easier to read and select. */
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
 }
@@ -75,7 +76,8 @@ nav a {
 nav li:first-child a {
     color: #ffffff;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.2rem;
+    /* Keep the site name slightly larger than the navigation links for hierarchy. */
+    font-size: 1.35rem;
 }
 
 /* Provide visible keyboard feedback for all interactive navigation links. */
@@ -230,7 +232,8 @@ footer p {
 
     nav a {
         padding: 0.35rem 0.55rem 0.35rem 0;
-        font-size: 0.82rem;
+        /* Keep mobile navigation readable while preserving room for every link. */
+        font-size: 0.9rem;
     }
 
     main,
